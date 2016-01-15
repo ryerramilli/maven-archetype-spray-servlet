@@ -9,6 +9,18 @@
         <include>**/*.scala</include>
       </includes>
     </fileSet>
+    <fileSet encoding="UTF-8" packaged="false" filtered="true">
+      <directory>src/main/webapp</directory>
+      <includes>
+        <include>**/*.xml</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8" packaged="false" filtered="true">
+      <directory>src/main/resources</directory>
+      <includes>
+        <include>**/*.conf</include>
+      </includes>
+    </fileSet>
     <fileSet encoding="UTF-8">
       <directory>src/test/scala</directory>
       <includes>
