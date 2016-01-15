@@ -1,43 +1,28 @@
 # usage from cli :
 
-* interactive Mode (select scala-archetype-simple and response to questions) :
+* interactive Mode (select io.chaiwala.maven.archetype and response to questions) :
 
         mvn archetype:generate
 
 * non interactive / batch (change info in the last line) :
 
         mvn archetype:generate -B \
-          -DarchetypeGroupId=net.alchim31.maven -DarchetypeArtifactId=scala-archetype-simple -DarchetypeVersion=1.5 \
+          -DarchetypeGroupId=io.chaiwala.maven.archetype -DarchetypeArtifactId=spray-servlet -DarchetypeVersion=0.1-SNAPHOT \
           -DgroupId=com.company -DartifactId=project -Dversion=0.1-SNAPSHOT -Dpackage=com.company
 
-* example compile/run (run 'mvn scala:help' for full command list) :
+* example compile/run :
 
-        mvn scala:compile
+        mvn war:exploded
 
-        mvn scala:run -DmainClass=com.company.App
+        mvn jetty:run 
+
+* Open a browser and browse to http://localhost:9998
 
 # Changes:
 
-## 1.6
+## 0.1-SNAPSHOT
 
-* change license for Unlicense to CC0 (always Public Domain)
-* upgrade version of scala, librairies, plugins
+* Created
 
-## 1.5
-
-* upgrade of scala 2.10.0
-* upgrade version of Specs(2), ScalaTest, Surefire, scala-maven-plugin
-
-## 1.4
-
-* move to sonatype for hosting
-* change groupId to net.alchim31.maven
-* upgrade version of scala to 2.9.2, version of JUnit, Specs(2) and ScalaTest
-
-## 1.3
-
-* upgrade to scala 2.8.0 (as default)
-* upgrade version of Specs and ScalaTest
-* provide sample of Specs and ScalaTest runnable from maven and eclipse (at least)
-
-Have fun!
+=================================================================
+This is a fork of "davidB/scala-archetype-simple" project
