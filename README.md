@@ -16,10 +16,11 @@
 
         mvn jetty:run 
 
-* Test
-   curl -v http://localhost:8181
-   curl -v http://localhost:8181/products/999
-   curl -v -X PUT http://localhost:8181/orders/807
+* Test:
+
+        curl -v http://localhost:8181
+        curl -v http://localhost:8181/products/999
+        curl -v -X PUT http://localhost:8181/orders/807
 
 # Changes:
 
