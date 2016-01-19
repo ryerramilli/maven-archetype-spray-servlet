@@ -14,8 +14,6 @@
 
         mvn compile war:exploded jetty:run -Dservice.port=8181
 
-        mvn jetty:run 
-
 * Test:
 
         curl -v http://localhost:8181
