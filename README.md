@@ -7,16 +7,19 @@
 * non interactive / batch (change info in the last line) :
 
         mvn archetype:generate -B \
-          -DarchetypeGroupId=io.chaiwala.maven.archetype -DarchetypeArtifactId=spray-servlet -DarchetypeVersion=0.1-SNAPHOT \
+          -DarchetypeGroupId=org.geekolator.maven.archetype -DarchetypeArtifactId=spray-servlet -DarchetypeVersion=0.1-SNAPHOT \
           -DgroupId=com.company -DartifactId=project -Dversion=0.1-SNAPSHOT -Dpackage=com.company
 
 * example compile/run :
 
-        mvn war:exploded
+        mvn compile war:exploded jetty:run -Dservice.port=8181
 
         mvn jetty:run 
 
-* Open a browser and browse to http://localhost:9998
+* Test
+   curl -v http://localhost:8181
+   curl -v http://localhost:8181/products/999
+   curl -v -X PUT http://localhost:8181/orders/807
 
 # Changes:
 

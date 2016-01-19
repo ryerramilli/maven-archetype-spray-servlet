@@ -7,7 +7,7 @@
     <version>7</version>
   </parent>
 
-  <groupId>io.chaiwala.maven.archetype</groupId>
+  <groupId>org.geekolator.maven.archetype</groupId>
   <artifactId>spray-servlet</artifactId>
   <version>0.1-SNAPSHOT</version>
   <packaging>maven-archetype</packaging>

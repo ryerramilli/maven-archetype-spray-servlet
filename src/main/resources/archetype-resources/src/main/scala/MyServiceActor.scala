@@ -1,25 +1,32 @@
 package ${package} 
 
 import akka.actor.Actor
-import spray.routing.HttpService
+import spray.routing.HttpServiceActor
+import spray.json.DefaultJsonProtocol._
+import spray.httpx.SprayJsonSupport._
 
-class MyServiceActor extends Actor with MyService {
+class MyServiceActor extends HttpServiceActor {
   
-  def actorRefFactory = context // context inherited from Actor
-  
-  def receive = runRoute(myRoute)
-  
-}
+  def receive = runRoute {
 
-trait MyService extends HttpService {
-
-  val myRoute = path("") {
-    get {
-      respondWithMediaType(spray.http.MediaTypes.`text/plain`) {
-        complete {
-          "Hello, World!!!"
-        }
-      }
+      path("orders" / Segment) {
+        orderNumber =>
+          get {
+            complete(s"Your order(number= $orderNumber) is being processed.")
+          } ~
+          put {
+            complete(s"Your order(number= $orderNumber) is successfully queued.")
+          }
+      } ~
+      path("products" / IntNumber) {
+          productId =>
+            get {
+              complete(s"Product(number= $productId) is available in the catalog.")
+            }
+      } ~
+      get {
+        complete(s"Hello World!!!")
+      } 
     }
-  }
+  
 }
